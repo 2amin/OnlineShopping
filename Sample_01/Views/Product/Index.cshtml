@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Sample_01.Models.DomainModel.DTO.EF.Product>
+
+@{
+    ViewBag.Title = "Index";    
+}
+
+<html5 xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Index</title>
+
+
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <link href="~/Scripts/Index.css" rel="stylesheet" />
+
+
+
+
+
+
+    </head>
+
+<body>
+    <div class="container col-sm-12" style="background-color:gray; width:100%;">
+        <div class="container col-sm-6">
+            <div class="row">
+                <ul>
+                    <li>
+                        <a href="#">Setting</a>
+                        <ul>
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="#">Delete</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">YourOrder</a></li>
+                    <li><a href="#">AboutUs</a></li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container col-sm-4" style="background-color:gray; width:20% ; margin-top:3%;">2</div>
+    <div class="container col-sm-8" style="background-color:red; width:80%; margin-top:3%">
+        <div class="row">
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Productid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoryid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UnitPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.discount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Stock)
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Productid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categoryid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.discount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Stock)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Order", "Order", new { id = item.Productid }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Productid }) |
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Productid })
+
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</body>
+</html5>
+
+
+
+

@@ -1,0 +1,46 @@
+﻿@model Sample_01.Models.DomainModel.DTO.EF.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Edit</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div class="container col-sm-12" style="background-color:red;height:80Px;width:100%"></div>
+
+    <div class="container col-sm-12" style="background-color:aqua">
+        <div class="row" style="background-color:cornsilk">
+            <form action="~/ProductController/Edit" method="post">
+                @Html.Label("Productid :")
+                @Html.TextBoxFor(@model => model.Productid)
+                <br/>
+                @Html.Label("Product Name :")
+                @Html.TextBoxFor(@model => model.Title)
+                <br/>
+                @Html.Label("UnitPrice :")
+                @Html.TextBoxFor(@model => model.UnitPrice)
+                <br/>
+                @Html.Label("Discount :")
+                @Html.TextBoxFor(@model => model.discount)
+                <br/>
+                @Html.Label("Stock :")
+                @Html.TextBoxFor(@model => model.Stock)
+                <br/>
+                @Html.Label("Categoryid :")
+                @Html.TextBoxFor(@model => model.Categoryid)
+                <br/>
+                <input type="submit" name="name" value="Edit" />
+            </form>
+        </div>
+    </div>   
+</body>
+</html>
+
+
+
